@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="<%= pageTitle === 'home' ? 'nav-item active' : 'nav-item' %>">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="<%= pageTitle === 'add product' ? 'nav-item active' : 'nav-item' %>">
+                <a class="nav-link" href="/add-product">Add Product</a>
+            </li>
+            <li class="<%= pageTitle === 'products' ? 'nav-item active' : 'nav-item' %>">
+                <a class="nav-link" href="/products">Products</a>
+            </li>
+            <% if (isAuthenticated) { %>
+
+            <li class="<%= pageTitle === 'Cart' ? 'nav-item active' : 'nav-item' %>">
+                <a class="nav-link" href="/cart">Cart</a>
+            </li>
+            <% } %>
+        </ul>
+        <% if (!isAuthenticated) { %>
+
+        <ul>
+            <li class="nav-item"><a href="/login">login</a></li>
+
+        </ul>
+        <% } %>
+        <% if (isAuthenticated) { %>
+
+        <ul>
+            <li class="nav-item"><a href="/logout">logout</a></li>
+
+        </ul>
+        <% } %>
+
+    </div>
+</nav>

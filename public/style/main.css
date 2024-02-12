@@ -1,0 +1,17 @@
+.container{
+    position: relative;
+    margin: auto;
+    border-width: 1 red;
+    background-color: green;
+    top: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
