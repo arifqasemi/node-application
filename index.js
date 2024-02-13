@@ -54,16 +54,25 @@ User.hasMany(Cart);
 
 
 
-app.use((req, res, next) => {
-  User.findByPk(12)
-    .then(user => {
-      req.user = user;
-      next();
-    })
-    .catch(err => console.log(err));
+// app.use((req, res, next) => {
+//   User.findByPk(12)
+//     .then(user => {
+//       req.user = user;
+//       next();
+//     })
+//     .catch(err => console.log(err));
+// });
+const port = 3000;
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
 });
 
 app.use(router)
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
 
 // sequelize
 //   //   .sync({ force: true })
@@ -79,5 +88,4 @@ app.use(router)
 //   })
 
 
-app.listen(3000)
 
